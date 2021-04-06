@@ -1,7 +1,6 @@
 #! /usr/bin/env bash
 # Call as `source venv.sh`
 
-GLOBALVENV="$HOME/venv"
 VENV="$1"
 
 function print_venvs {
@@ -10,7 +9,7 @@ function print_venvs {
       echo "$DIRECTORY"
     fi
   done
-  for DIRECTORY in "$GLOBALVENV"/*; do
+  for DIRECTORY in "$VIRTUAL_ENV_DIR"/*; do
     if [[ -f "$DIRECTORY/bin/activate" ]]; then
       basename "$DIRECTORY"
     fi
@@ -20,12 +19,16 @@ function print_venvs {
 function source_venv {
   if [[ -f "$VENV/bin/activate" ]]; then
     source "$VENV/bin/activate"
-  elif [[ -f "$GLOBALVENV/$VENV/bin/activate" ]]; then
-    source "$GLOBALVENV/$VENV/bin/activate"
+  elif [[ -f "$VIRTUAL_ENV_DIR/$VENV/bin/activate" ]]; then
+    source "$VIRTUAL_ENV_DIR/$VENV/bin/activate"
   else
     echo "No venv found"
   fi
 }
+
+if [[ ! -n "$VIRTUAL_ENV_DIR" ]]; then
+  VIRTUAL_ENV_DIR="$HOME/venv"
+fi
 
 if [[ ! -n "$VENV" || "$VENV" == "--complete" ]]; then
   print_venvs
