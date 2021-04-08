@@ -7,4 +7,4 @@ _venv_tab_complete() {
   reply=( "${(ps:\n:)completions}" )
 }
 
-compctl -K _venv_tab_complete venv
+compctl -f -K _venv_tab_complete venv
