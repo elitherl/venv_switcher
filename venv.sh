@@ -1,4 +1,3 @@
-#! /usr/bin/env bash
 # Call as `source venv.sh`
 
 VENV="$1"
