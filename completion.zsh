@@ -1,4 +1,4 @@
-# completions.zsh
+# completion.zsh
 
 _venv_tab_complete() {
   local word completions
