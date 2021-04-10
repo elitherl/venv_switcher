@@ -3,7 +3,7 @@
 _venv_tab_complete() {
   local word completions
   word="$1"
-  completions="$($VIRTUAL_ENV_DIR/scripts/venv.sh --complete)"
+  completions="$($VIRTUAL_ENV_DIR/venv_switcher/venv.sh --complete)"
   reply=( "${(ps:\n:)completions}" )
 }
 

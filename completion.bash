@@ -3,7 +3,7 @@
 _venv_tab_complete() {
   COMPREPLY=()
   local word="${COMP_WORDS[COMP_CWORD]}"
-  local completions="$($VIRTUAL_ENV_DIR/scripts/venv.sh --complete)"
+  local completions="$($VIRTUAL_ENV_DIR/venv_switcher/venv.sh --complete)"
   COMPREPLY=( $(compgen -W "$completions" -- "$word")  )
 }
 
