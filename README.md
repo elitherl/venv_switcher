@@ -3,7 +3,9 @@
 Script to make switching virtual envs quick and easy
 
 ## Setup
-- Ensure `venv.sh` is executable
+- Put files in `/path/to/virtual_env_dir/venv_switcher/`
+  - `/path/to/virtual_env_dir` should be directory containing python virtual environments to use
+  - TODO make paths more dynamic so files don't need to be in a specific location
 - `source` appropriate `init.sh` script in startup script (e.g. `.basrh`, `.zshrc`, `.profile`, etc...)
   - Script will add alias `venv` to use `venv.sh`
   - Will setup the appropriate completion script based on current shell
