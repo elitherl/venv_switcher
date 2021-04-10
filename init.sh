@@ -11,6 +11,7 @@ elif [[ -n "$ZSH_VERSION" ]]; then
   if [[ ! -n "$VIRTUAL_ENV_DIR" ]]; then
     export VIRTUAL_ENV_DIR="${0:a:h:h}"
   fi
+  setopt complete_aliases
   alias venv="source $VIRTUAL_ENV_DIR/scripts/venv.sh"
   source "${0:a:h}/completion.zsh"
 
